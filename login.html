@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário</title>
+    <link rel="stylesheet" href="../Estilos/login.css">
+    
+</head>
+<body>
+    <header>
+        <img src="../imagens-video/logo.png.png" alt="Meu logo">
+        <nav>
+          <ul>
+            <li class="dropdown">
+              <div class="menu-icon" onclick="toggleDropdownMenu()">&#9776;</div>
+              <div class="dropdown-menu">
+                <a href="../Paginas/escolha.html">Chat</a>
+                <a href="#footer">Contatos</a>
+              </div>
+            </li>
+          </ul>
+        </nav>
+      </header>
+    
+    <main>
+        <canvas id="canvas" width="300" height="60"></canvas>
+        <form action="" method="post" onsubmit="event.preventDefault();">
+            <div class="formulario-login">
+                <h2>Login</h2>
+                <label for="nome">Nome de usuário:</label>
+                <input type="text" id="nome" name="nome" required><br>
+                <label for="senha">Senha</label>
+                <input type="password" id="senha" name="senha" required><br>
+                <input type="submit" value="login" onclick="login()">
+            </div>
+        </form>
+    </main>
+    <footer id="footer">
+        <p class="footer">&copy;2023 Animalschat. Todos os direitos reservados</p>
+        <address>
+        <a href="https://www.instagram.com/Teh_hamashyach" target="_blank"><img src="../imagens-video/iconinstagram.ico" alt="Instagram" class="instagram-icon"></a>
+        <span id="emailSymbol">&#9993;</span>
+        <span id="emailMessage" style="display: none;">Email copiado!</span>
+        </address>
+      </footer>
+    
+      <script src="../Javascript/login.js"></script>
+      <script src="../Javascript/footer.js"></script>
+
+
+
+    
+</body>
+</html>

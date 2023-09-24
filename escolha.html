@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Escolha um animal</title>
+  <link rel="stylesheet" href="../Estilos/escolha.css">
+  <script src="../Javascript/escolha.js"></script>
+  <script src="../Javascript/footer.js"></script>
+</head>
+<body>
+  <header>
+    <img src="../imagens-video/logo.png.png" alt="Meu logo">
+    <nav>
+      <ul>
+        <li class="dropdown">
+          <div class="menu-icon" onclick="toggleDropdownMenu()">&#9776;</div>
+          <div class="dropdown-menu">
+            <a href="../Paginas/escolha.html">Chat</a>
+            <a href="#footer">Contatos</a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <h1>Está pronto?</h1>
+    <p>Antes de tudo, escolha um de nossos amiguinhos para te ajudar:</p>
+    
+    <div id="animalContainer">
+      <article class="animal-card">
+        <img id="animalImage" class="animal-image" src="../imagens-video/gato.gif" alt="Gato">
+        <figcaption id="animalCaption">
+          Banguela
+          <br>
+          <br>
+          Eu sou um felino curioso e astuto que sabe tudo sobre o mundo dos gatos. Com meus olhos aguçados, eu observo cada movimento ao meu redor. Meu conhecimento sobre os segredos felinos é inigualável.
+          <br>
+          <br>
+          Então, deixe-me guiar você por esse mundo intrigante dos gatos. Juntos, vamos explorar os comportamentos, cuidados, alimentação dos nossos amigos felinos e descobrir o que torna essas criaturas tão fascinantes e encantadoras.
+        </figcaption>
+        
+      </article>
+  
+      <button id="prevButton" onclick="trocarAnimal(-1)">←</button>
+      <button id="nextButton" onclick="trocarAnimal(1)">→</button>
+  
+      <button id="meEscolhaButton" onclick="fazerSom()" >Me escolha</button>
+  
+      <audio id="audioElement">
+        <source id="audioSource" src="../audio/gatoaudio.mp3" type="audio/mp3">
+      </audio>
+    </div>
+  </main>
+  
+  <footer id="footer">
+    <address>
+      <a href="https://www.instagram.com/Teh_hamashyach" target="_blank"><img src="../imagens-video/iconinstagram.ico" alt="Instagram" class="instagram-icon"></a>
+      <span id="emailSymbol">&#9993;</span>
+      <span id="emailMessage" style="display: none;">Email copiado!</span>
+    </address>
+  </footer>
+</body>
+</html>

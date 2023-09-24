@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chatbot</title>
+</head>
+<body>
+  <link rel="stylesheet" href="../Estilos/chat.css">
+</head>
+<body>
+<header>
+  <img src="../imagens-video/logo.png.png" alt="Meu logo">
+  <nav>
+    <ul>
+      <li class="dropdown">
+        <div class="menu-icon" onclick="toggleDropdownMenu()">&#9776;</div>
+        <div class="dropdown-menu">
+          <a href="../Paginas/escolha.html">Chat</a>
+          <a href="#footer">Contatos</a>
+
+
+        </div>
+      </li>
+    </ul>
+  </nav>
+</header>
+<main>
+  </div>
+  <div id="chatContainer">
+    <div id="chatHeader">
+      <div id="avatarContainer">
+        <img id="avatarImage" src="../imagens-video/papagaio.gif" alt="Avatar">
+      </div>
+      Lago ♥
+    </div>
+  
+    <div id="messageArea"></div>
+  
+    <div id="userInput">
+      <input type="text" id="inputField" placeholder="Digite sua mensagem...">
+      <button id="submitBtn">Enviar</button>
+    </div>
+  </div>
+</main>
+
+<footer id="footer">
+  <address>
+    <a href="https://www.instagram.com/Teh_hamashyach" target="_blank"><img src="../imagens-video/iconinstagram.ico" alt="Instagram" class="instagram-icon"></a>
+    <span id="emailSymbol">&#9993;</span>
+    <span id="emailMessage" style="display: none;">Email copiado!</span>
+  </address>
+</footer>
+
+<script>
+  const welcomeMessage = 'Bem-vindo(a) ao chat! Como posso ajudar?';
+  const questionOptions = [
+    '1. Qual é a dieta adequada para um papagaio?',
+    'Quais alimentos são prejudiciais para papagaios e devem ser evitados?'
+  ];
+  const answerOptions = [
+    'A dieta de um papagaio deve incluir uma variedade de alimentos saudáveis, como ração específica para papagaios, frutas frescas, vegetais, grãos, sementes e nozes. É importante oferecer uma dieta equilibrada que atenda às necessidades nutricionais específicas da espécie de papagaio em questão.',
+    'Existem alguns alimentos que são tóxicos ou prejudiciais para papagaios e devem ser evitados, como chocolate, cafeína, álcool, abacate, cebola, alho e alimentos com aditivos artificiais. Também é importante evitar alimentos salgados, açucarados e gordurosos, pois podem causar problemas de saúde.'
+  ];
+
+  const messageArea = document.getElementById('messageArea');
+  const inputField = document.getElementById('inputField');
+  const submitBtn = document.getElementById('submitBtn');
+
+  function displayMessage(message) {
+    const messageElement = document.createElement('div');
+    messageElement.className = 'botMessage';
+    messageElement.textContent = message;
+    messageArea.appendChild(messageElement);
+    messageArea.scrollTop = messageArea.scrollHeight;
+  }
+
+  function displayWelcomeMessage() {
+    displayMessage(welcomeMessage);
+  }
+
+  function displayQuestions() {
+    for (const question of questionOptions) {
+      displayMessage(question);
+    }
+  }
+
+  function handleUserInput() {
+    const userInput = parseInt(inputField.value);
+
+    if (isNaN(userInput) || userInput <= 0 || userInput > questionOptions.length) {
+      displayMessage('Não tenho resposta para isso!');
+    } else {
+      const answerIndex = userInput - 1;
+      displayMessage(answerOptions[answerIndex]);
+    }
+
+    inputField.value = '';
+  }
+
+  displayWelcomeMessage();
+  displayQuestions();
+
+  submitBtn.addEventListener('click', handleUserInput);
+  inputField.addEventListener('keypress', function(event) {
+    if (event.keyCode === 13) {
+      handleUserInput();
+    }
+  });
+
+</script>
+<script src="../Javascript/footer.js"></script>
+  
+</body>
+</html>

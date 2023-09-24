@@ -1,0 +1,83 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    overflow: hidden;
+}
+
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.glow {
+    opacity: 0;
+    background: linear-gradient(to bottom, rgba(148, 0, 211, 0.8) 0%, rgba(148, 0, 211, 0) 100%);
+    pointer-events: none;
+    animation: glowAnimation 1s infinite;
+}
+
+.logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.logo video {
+    width: 500px; /* Defina o tamanho desejado para o vídeo */
+}
+
+.button {
+    position: absolute;
+    bottom: 100px; /* Valor ajustado para mover o botão para cima */
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    z-index: 2; /* Valor ajustado para posicionar o botão acima do logotipo */
+}
+
+.button button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #00FF00;
+    color: black;
+    border: none;
+    outline: none;
+    font-family: Arial, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(13, 12, 99, 0.6);
+    image-rendering: pixelated; /* Adicionado para deixar a imagem de fundo pixelada */
+}
+
+.button button:hover {
+    background-color: #009900;
+    box-shadow: 0 6px 12px rgba(1, 83, 19, 0.6);
+}
+
+.button button:focus {
+    outline: none;
+    box-shadow: 0 0 3px #00FF00, 0 0 6px rgba(1, 83, 19, 0.6);
+}
+
+.pixelated-text {
+    display: inline-block;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background: linear-gradient(transparent 50%, rgba(1, 83, 19, 0.6) 50%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
